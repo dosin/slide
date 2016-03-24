@@ -7,7 +7,7 @@
 	#slide-container {
 		overflow: hidden;
 		position: relative;
-		margin: 0 auto;
+		margin: 50px auto;
 	}
 	#slide {
 		position: absolute;
@@ -15,6 +15,7 @@
 	}
 	#slide img {
 		float: left;
+		width: 1024px;
 	}
 	#slide-pagination {
 		position: absolute;
@@ -34,7 +35,8 @@
 		background: #333;
 	}
 	#slide-pagination .active {
-		background: #ccc !important;
+		background: #ccc;
+		cursor: default;
 	}
 	#slide-container > a{
 		cursor: pointer;
@@ -78,10 +80,10 @@
 
 		// 设置
 
-		var myWidth = 1366;                                    // 图片宽度
-		var myHeight = 768;                                    // 图片高度
+		var myWidth = 1024;                                    // 图片宽度
+		var myHeight = 576;                                    // 图片高度
 		var myInterval = 3000;                                 // 轮播时间 ms
-		var myButtons = 0;                                     // 有无按钮 1有 0无
+		var myButtons = 1;                                     // 有无按钮 1有 0无
 		var myNum;                                             // 图片数量 自动生成
 
 		// 辅助标识
@@ -197,7 +199,7 @@
 
 		if (myButtons) {
 			prev.onclick = toPrevious;
-			next.onclick = toPrevious;
+			next.onclick = toNext;
 		} else {
 			prev.style.display = "none";
 			next.style.display = "none";
